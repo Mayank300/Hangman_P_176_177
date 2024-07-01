@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangman Game</title>
     <link rel="stylesheet" href="../static/game.css" />
+
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="../static/game.js"></script>
   </head>
   <body>
@@ -21,7 +24,7 @@
         </div>
         <div class="hangman">
           <div class="word-display">
-            <p class="letter" id="guess_word">T E S T _ N G</p>
+            <p class="letter" id="guess_word">No WORD for now</p>
           </div>
           <div class="guess-area">
             <p>Guess a letter:</p>

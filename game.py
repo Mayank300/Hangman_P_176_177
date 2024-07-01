@@ -2,8 +2,6 @@ from flask import Flask, render_template, jsonify, request
 import os
 import random
 
-
-
 words = {
     1: "ELEPHANT",
     2: "TIGER",
@@ -16,8 +14,6 @@ words = {
     9: "BOAT",
     10: "HELICOPTER"
 }
-
-
 
 app = Flask(__name__)
 
@@ -39,7 +35,5 @@ def get_word():
         'status': 'success',
         'word': random.choice(words)
     })
-
-   
 
 app.run(debug=True)

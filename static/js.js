@@ -1,5 +1,5 @@
-let left_balloon = 4;
-let coin = 2;
+let left_balloon = 2;
+let coin = 0;
 
 function askName() {
   let player_name = prompt("Type here");
@@ -9,7 +9,13 @@ function askName() {
 function purchaseBalloon() {
   $("#shop").on("click", "img", function () {
     if (coin == 0) {
-      alert("Not enough coins");
+      Swal.fire({
+        icon: "info",
+        html: "Not enough coins",
+        showCloseButton: true,
+        showCancelButton: false,
+        showConfirmButton: false,
+      });
     } else if (left_balloon <= 4) {
       left_balloon += 1;
       coin -= 1;
@@ -18,8 +24,29 @@ function purchaseBalloon() {
       document.getElementById("balloon_left").textContent =
         "BALLOONS:    " + left_balloon;
       document.getElementById("coin_left").textContent = "COINS:    " + coin;
-    } else alert("Can't buy more than 5 Balloons!!");
+    } else {
+      Swal.fire({
+        icon: "error",
+        html: "Can't buy more than <b>5</b> balloons",
+        showCloseButton: true,
+        showCancelButton: false,
+        showConfirmButton: false,
+      });
+    }
   });
+}
+
+function getResponse() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const encodedData = urlParams.get("response");
+  if (encodedData) {
+    const jsonData = decodeURIComponent(encodedData);
+    const data = JSON.parse(jsonData);
+    console.log(data);
+    coin = data.coin;
+    display_coin = document.getElementById("coin_left").textContent =
+      "COINS:    " + data.coin;
+  }
 }
 
 $(document).ready(function () {
@@ -32,8 +59,9 @@ $(document).ready(function () {
   purchaseBalloon();
   $("#play").click(function () {
     const playerData = { balloon: left_balloon, coin: coin };
-    const playerDataString = JSON.stringify(playerData);
-    localStorage.setItem("playerDataString", playerDataString);
-    location.href = "../templates/game.html";
+    const jsonData = JSON.stringify(playerData);
+    const encodedData = encodeURIComponent(jsonData);
+    window.location.href = "../templates/game.html?data=" + encodedData;
   });
+  getResponse();
 });
