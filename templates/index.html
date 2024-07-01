@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../static/js.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="side-info">
+        <div class="left-info">
+          <text class="balloon" id="balloon_left"></text>
+          <text class="coin" id="coin_left"></text>
+        </div>
+        <div id="shop">
+          <div class="shop-content">
+            <img src="{{ balloon_image }}" alt="Balloon Image" />
+            <span class="shop-text">Click to buy one balloon</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="play-button" id="play">Play</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="../static/game.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../static/game.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="hangman-container">
+        <div class="side-text">
+          <text id="balloon"></text>
+          <text id="coin"></text>
+        </div>
+        <div class="hangman">
+          <div class="word-display">
+            <p class="letter" id="guess_word">T E S T _ N G</p>
+          </div>
+          <div class="guess-area">
+            <p>Guess a letter:</p>
+            <input type="text" id="guess-input" maxlength="1" />
+            <button id="guess-button">Guess</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
