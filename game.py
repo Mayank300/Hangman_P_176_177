@@ -17,17 +17,13 @@ words = {
 
 app = Flask(__name__)
 
-picFolder = os.path.join('static','assets' )
-app.config["UPLOAD_FOLDER"] = picFolder
-
 @app.route("/")
 def index():
-   balloonPic = os.path.join(app.config["UPLOAD_FOLDER"], 'balloon.png')
-   return render_template("index.html", balloon_image=balloonPic)
+   return render_template("index.html")
 
 @app.route("/templates/game.html")
 def game():
-   return render_template("game.html")
+    return render_template("game.html")
 
 @app.route("/get-word" , methods = ["GET"])
 def get_word():

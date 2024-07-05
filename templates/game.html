@@ -17,22 +17,21 @@
   </head>
   <body>
     <div class="main-container">
-      <div class="hangman-container">
-        <div class="side-text">
-          <text id="balloon"></text>
-          <text id="coin"></text>
+      <div class="side-text">
+        <text id="balloon"></text>
+        <text id="coin"></text>
+      </div>
+      <div class="hangman">
+        <div class="word-display">
+          <p class="letter" id="guess_word">No WORD for now</p>
         </div>
-        <div class="hangman">
-          <div class="word-display">
-            <p class="letter" id="guess_word">No WORD for now</p>
-          </div>
-          <div class="guess-area">
-            <p>Guess a letter:</p>
-            <input type="text" id="guess-input" maxlength="1" />
-            <button id="guess-button">Guess</button>
-          </div>
+        <div class="guess-area">
+          <p>Guess a letter:</p>
+          <input type="text" id="guess-input" maxlength="1" />
+          <button id="guess-button">Guess</button>
         </div>
       </div>
+      <img class="balloon_image" id="balloon_img" src="" />
     </div>
   </body>
 </html>

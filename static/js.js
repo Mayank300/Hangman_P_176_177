@@ -1,11 +1,6 @@
 let left_balloon = 2;
 let coin = 0;
 
-function askName() {
-  let player_name = prompt("Type here");
-  return player_name;
-}
-
 function purchaseBalloon() {
   $("#shop").on("click", "img", function () {
     if (coin == 0) {

@@ -11,17 +11,16 @@ body {
 
 .main-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 90%;
-  max-width: 1200px; /* Increased max-width for a better layout */
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
+  justify-content: space-between;
 }
 
-.hangman-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.balloon_image {
+  /* margin-left: 100px; */
 }
 
 .hangman {
@@ -75,7 +74,6 @@ button:hover {
   background-color: #45a049;
 }
 
-/* Adjustments for responsiveness */
 @media (max-width: 600px) {
   .word-display {
     flex-wrap: wrap;
@@ -95,6 +93,6 @@ button:hover {
 .side-text {
   display: flex;
   flex-direction: column;
-  margin-right: 100px;
+  /* margin-right: 100px; */
   font-size: 30px;
 }

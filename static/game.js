@@ -1,6 +1,11 @@
 let letter = "";
 let left_balloon, left_coin;
 
+function changeImage(a) {
+  document.getElementById("balloon_img").src = a;
+  console.log(a);
+}
+
 function getPlayerData() {
   $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
@@ -13,6 +18,7 @@ function getPlayerData() {
       document.getElementById("coin").textContent = "COINS:    " + data.coin;
       left_balloon = data.balloon;
       left_coin = data.coin;
+      changeImage(`../static/assets/${left_balloon}B.png`);
     } else {
       console.log("no data found");
     }
@@ -70,6 +76,7 @@ function checkInputLetter(i) {
       newBalloon = left_balloon;
       document.getElementById("balloon").textContent =
         "BALLOONS:    " + newBalloon;
+      changeImage(`../static/assets/${left_balloon}B.png`);
     }
   } else {
     Swal.fire({
@@ -90,6 +97,7 @@ function checkInputLetter(i) {
 $(document).ready(function () {
   getPlayerData();
   getWord();
+
   $("#guess-button").click(function () {
     checkInputLetter(letter);
   });
